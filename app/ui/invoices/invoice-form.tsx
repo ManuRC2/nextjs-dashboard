@@ -1,6 +1,6 @@
 'use client';
 
-import { CustomerField, InvoiceForm as InvoiceFormType } from '@/app/lib/definitions';
+import { CustomerField, InvoiceFormType } from '@/app/lib/definitions';
 import {
   CheckIcon,
   ClockIcon,
@@ -15,7 +15,7 @@ import { useActionState } from 'react';
 type InvoiceFormProps = {
   invoice?: InvoiceFormType; // Optional for creation
   customers: CustomerField[];
-  action: (formData: FormData) => Promise<any>; // Function to handle form submission
+  action: (prevState: State, formData: FormData) => Promise<any>; // Function to handle form submission
   submitButtonText: string; // Button text
 };
 
